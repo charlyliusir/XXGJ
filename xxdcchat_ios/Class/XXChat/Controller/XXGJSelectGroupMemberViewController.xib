@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="rHm-Ur-K08" customClass="XXGJSelectGroupMemberViewController">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="VW8-CY-gb3"/>
+                <viewControllerLayoutGuide type="bottom" id="pp6-gV-v8k"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="PaJ-Jz-aSu">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cab-Tm-6lo">
+                        <rect key="frame" x="0.0" y="80" width="375" height="1"/>
+                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="XSr-dT-U38"/>
+                            <constraint firstAttribute="height" constant="1" id="tNX-My-Bww"/>
+                        </constraints>
+                    </view>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-Kk-Pib">
+                        <rect key="frame" x="0.0" y="81" width="375" height="586"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="rHm-Ur-K08" id="rmC-vz-m8t"/>
+                            <outlet property="delegate" destination="rHm-Ur-K08" id="Jfm-sU-Kfu"/>
+                        </connections>
+                    </tableView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Vql-Kk-Pib" secondAttribute="trailing" id="5bR-Ok-5XZ"/>
+                    <constraint firstAttribute="trailing" secondItem="Cab-Tm-6lo" secondAttribute="trailing" id="EOB-eE-olO"/>
+                    <constraint firstItem="Cab-Tm-6lo" firstAttribute="leading" secondItem="PaJ-Jz-aSu" secondAttribute="leading" id="bjs-us-HoM"/>
+                    <constraint firstItem="Cab-Tm-6lo" firstAttribute="leading" secondItem="PaJ-Jz-aSu" secondAttribute="leading" id="qQt-bF-lZD"/>
+                    <constraint firstItem="Vql-Kk-Pib" firstAttribute="top" secondItem="Cab-Tm-6lo" secondAttribute="bottom" id="uGJ-6p-868"/>
+                    <constraint firstItem="Cab-Tm-6lo" firstAttribute="top" secondItem="VW8-CY-gb3" secondAttribute="bottom" constant="60" id="wMQ-sT-Vz0"/>
+                    <constraint firstItem="Vql-Kk-Pib" firstAttribute="leading" secondItem="PaJ-Jz-aSu" secondAttribute="leading" id="xC7-eb-W9z"/>
+                    <constraint firstAttribute="trailing" secondItem="Cab-Tm-6lo" secondAttribute="trailing" id="xVs-Ni-qXI"/>
+                    <constraint firstItem="pp6-gV-v8k" firstAttribute="top" secondItem="Vql-Kk-Pib" secondAttribute="bottom" id="z0C-Bu-chZ"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="tableView" destination="Vql-Kk-Pib" id="vrs-TN-ngN"/>
+            </connections>
+            <point key="canvasLocation" x="-215" y="-273"/>
+        </viewController>
+    </objects>
+</document>

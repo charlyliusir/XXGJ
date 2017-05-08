@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="Dq0-Z8-Ef4" customClass="XXGJMapViewController">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="S3v-RA-cjb"/>
+                <viewControllerLayoutGuide type="bottom" id="kyx-rg-Zt6"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="lDU-lM-4JC">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jag-Ps-2FO" userLabel="map view" customClass="BMKMapView">
+                        <rect key="frame" x="0.0" y="20" width="375" height="571"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnR-H3-Ngb">
+                                <rect key="frame" x="320" y="516" width="45" height="45"/>
+                                <state key="normal" backgroundImage="chat_ui_icon_location_correct"/>
+                                <connections>
+                                    <action selector="correctUserLocation:" destination="Dq0-Z8-Ef4" eventType="touchUpInside" id="dPR-kN-ziD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZnR-H3-Ngb" secondAttribute="trailing" constant="10" id="hzA-eh-rFv"/>
+                            <constraint firstAttribute="bottom" secondItem="ZnR-H3-Ngb" secondAttribute="bottom" constant="10" id="xhw-8t-JHA"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zi3-eK-u2S" userLabel="bottom view">
+                        <rect key="frame" x="0.0" y="591" width="375" height="76"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLx-re-Sfo" userLabel="top line">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="sTn-qN-VC7"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gY2-pR-nrs" userLabel="content view">
+                                <rect key="frame" x="10" y="16.5" width="169" height="43"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="溪城家园" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzC-UQ-SZv">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昌平区东小口陈家营西路溪城家园" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wy-FS-ldo">
+                                        <rect key="frame" x="0.0" y="29.5" width="169" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="1wy-FS-ldo" firstAttribute="leading" secondItem="gY2-pR-nrs" secondAttribute="leading" id="4aN-XP-S6g"/>
+                                    <constraint firstItem="bzC-UQ-SZv" firstAttribute="top" secondItem="gY2-pR-nrs" secondAttribute="top" id="53H-eK-l5F"/>
+                                    <constraint firstItem="1wy-FS-ldo" firstAttribute="top" secondItem="bzC-UQ-SZv" secondAttribute="bottom" constant="9" id="Dph-q3-QlK"/>
+                                    <constraint firstAttribute="trailing" secondItem="1wy-FS-ldo" secondAttribute="trailing" id="OWh-BU-5yb"/>
+                                    <constraint firstAttribute="bottom" secondItem="1wy-FS-ldo" secondAttribute="bottom" id="ryM-8I-gwl"/>
+                                    <constraint firstItem="bzC-UQ-SZv" firstAttribute="leading" secondItem="gY2-pR-nrs" secondAttribute="leading" id="tVf-6a-oMr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JLx-re-Sfo" firstAttribute="top" secondItem="Zi3-eK-u2S" secondAttribute="top" id="8O1-n3-lUA"/>
+                            <constraint firstAttribute="trailing" secondItem="JLx-re-Sfo" secondAttribute="trailing" id="Bb4-0g-Pd9"/>
+                            <constraint firstAttribute="height" constant="76" id="MQ6-ui-gBr"/>
+                            <constraint firstItem="gY2-pR-nrs" firstAttribute="centerY" secondItem="Zi3-eK-u2S" secondAttribute="centerY" id="MjT-8e-Bcf"/>
+                            <constraint firstItem="gY2-pR-nrs" firstAttribute="leading" secondItem="Zi3-eK-u2S" secondAttribute="leading" constant="10" id="Sow-6C-Fg7"/>
+                            <constraint firstItem="JLx-re-Sfo" firstAttribute="leading" secondItem="Zi3-eK-u2S" secondAttribute="leading" id="yMT-AC-snE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="Jag-Ps-2FO" firstAttribute="top" secondItem="S3v-RA-cjb" secondAttribute="bottom" id="6kX-ah-gFh"/>
+                    <constraint firstAttribute="trailing" secondItem="Zi3-eK-u2S" secondAttribute="trailing" id="auv-b3-cdV"/>
+                    <constraint firstItem="Zi3-eK-u2S" firstAttribute="leading" secondItem="lDU-lM-4JC" secondAttribute="leading" id="efS-Wp-5CA"/>
+                    <constraint firstItem="kyx-rg-Zt6" firstAttribute="top" secondItem="Zi3-eK-u2S" secondAttribute="bottom" id="kFm-rR-kmQ"/>
+                    <constraint firstAttribute="trailing" secondItem="Jag-Ps-2FO" secondAttribute="trailing" id="kdu-Cf-eHy"/>
+                    <constraint firstItem="Zi3-eK-u2S" firstAttribute="top" secondItem="Jag-Ps-2FO" secondAttribute="bottom" id="mIT-GK-X5b"/>
+                    <constraint firstItem="Jag-Ps-2FO" firstAttribute="leading" secondItem="lDU-lM-4JC" secondAttribute="leading" id="xZ6-AP-pbt"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="correctUserLocationBtn" destination="ZnR-H3-Ngb" id="313-tr-Gze"/>
+                <outlet property="locationAddressLabel" destination="1wy-FS-ldo" id="shu-Gx-kAi"/>
+                <outlet property="locationNameLabel" destination="bzC-UQ-SZv" id="0st-Os-fhF"/>
+                <outlet property="mapView" destination="Jag-Ps-2FO" id="mZk-0h-SE7"/>
+            </connections>
+            <point key="canvasLocation" x="-3" y="-16"/>
+        </viewController>
+    </objects>
+    <resources>
+        <image name="chat_ui_icon_location_correct" width="45" height="45"/>
+    </resources>
+</document>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatitem" rowHeight="58" id="vDh-KC-sJo" customClass="XXGJChatItemTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vDh-KC-sJo" id="t6Q-oA-bfD">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B9B-zn-hWk">
+                        <rect key="frame" x="10" y="10.5" width="49" height="49"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="49" id="WXf-Eb-gAz"/>
+                            <constraint firstAttribute="height" constant="49" id="eXT-lo-UC0"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新朋友" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jun-BL-MFc">
+                        <rect key="frame" x="69" y="25" width="49" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="B9B-zn-hWk" firstAttribute="centerY" secondItem="t6Q-oA-bfD" secondAttribute="centerY" id="Zpb-m9-pmz"/>
+                    <constraint firstItem="Jun-BL-MFc" firstAttribute="centerY" secondItem="t6Q-oA-bfD" secondAttribute="centerY" id="nj5-vL-w8B"/>
+                    <constraint firstItem="Jun-BL-MFc" firstAttribute="leading" secondItem="B9B-zn-hWk" secondAttribute="trailing" constant="10" id="wEr-tA-dBJ"/>
+                    <constraint firstItem="B9B-zn-hWk" firstAttribute="leading" secondItem="t6Q-oA-bfD" secondAttribute="leading" constant="10" id="xam-9M-JZP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconImageView" destination="B9B-zn-hWk" id="QGg-X3-H9j"/>
+                <outlet property="titleNameLabel" destination="Jun-BL-MFc" id="y3g-Uk-SVF"/>
+            </connections>
+            <point key="canvasLocation" x="-13.5" y="-204"/>
+        </tableViewCell>
+    </objects>
+</document>

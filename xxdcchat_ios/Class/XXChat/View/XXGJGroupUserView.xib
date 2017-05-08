@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1oI-Ao-4eD" customClass="XXGJGroupUserView">
+            <rect key="frame" x="0.0" y="0.0" width="40" height="55.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljO-yV-pOp">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Oaf-xr-pHo"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="lFq-Q9-vxv"/>
+                        <constraint firstAttribute="width" constant="40" id="tp8-d1-LjQ"/>
+                        <constraint firstAttribute="height" constant="40" id="wEX-on-2sx"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="placeholder_user_male_icon"/>
+                    <connections>
+                        <action selector="clickUserAvatarAction:" destination="1oI-Ao-4eD" eventType="touchUpInside" id="eH2-qZ-rNS"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小逗比" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6J-vO-Pd8">
+                    <rect key="frame" x="0.0" y="40" width="40" height="15.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.1662979722" green="0.2212058902" blue="0.3332493305" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="J6J-vO-Pd8" firstAttribute="trailing" secondItem="ljO-yV-pOp" secondAttribute="trailing" id="32M-eA-TII"/>
+                <constraint firstItem="J6J-vO-Pd8" firstAttribute="leading" secondItem="ljO-yV-pOp" secondAttribute="leading" id="6Oo-pb-QTf"/>
+                <constraint firstAttribute="trailing" secondItem="ljO-yV-pOp" secondAttribute="trailing" id="EdV-Wk-UCB"/>
+                <constraint firstItem="ljO-yV-pOp" firstAttribute="top" secondItem="1oI-Ao-4eD" secondAttribute="top" id="G1K-9v-aeS"/>
+                <constraint firstAttribute="bottom" secondItem="J6J-vO-Pd8" secondAttribute="bottom" id="Yta-LI-BcT"/>
+                <constraint firstItem="J6J-vO-Pd8" firstAttribute="top" secondItem="ljO-yV-pOp" secondAttribute="bottom" id="b19-Z3-41L"/>
+                <constraint firstItem="ljO-yV-pOp" firstAttribute="leading" secondItem="1oI-Ao-4eD" secondAttribute="leading" id="kxS-XK-hxW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="userAvatarImageBtn" destination="ljO-yV-pOp" id="LM7-Ou-gT0"/>
+                <outlet property="userNameLabel" destination="J6J-vO-Pd8" id="af9-OJ-1Yx"/>
+            </connections>
+            <point key="canvasLocation" x="113" y="-197"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholder_user_male_icon" width="40" height="40"/>
+    </resources>
+</document>

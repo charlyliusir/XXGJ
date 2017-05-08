@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="XXGJGrabRedEnvelopeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HuN-Pm-oCb" userLabel="bottom line view">
+                        <rect key="frame" x="0.0" y="59" width="320" height="0.5"/>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="Pt7-wD-2Cq"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_user_male_icon" translatesAutoresizingMaskIntoConstraints="NO" id="vOp-1f-isS">
+                        <rect key="frame" x="10" y="9" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="2BG-cU-KAC"/>
+                            <constraint firstAttribute="width" constant="40" id="Acz-pA-8xw"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                <color key="value" red="0.14117647059999999" green="0.51372549020000002" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGS-7l-TJP">
+                        <rect key="frame" x="60" y="12" width="64" height="36.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="龙宝宝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6Z-UV-Ua6">
+                                <rect key="frame" x="0.0" y="0.0" width="64" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10-08 9:06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOW-ou-qbf">
+                                <rect key="frame" x="0.0" y="22" width="64" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gOW-ou-qbf" secondAttribute="trailing" id="1KA-81-7S0"/>
+                            <constraint firstAttribute="bottom" secondItem="gOW-ou-qbf" secondAttribute="bottom" id="WGn-xE-d59"/>
+                            <constraint firstItem="gOW-ou-qbf" firstAttribute="top" secondItem="d6Z-UV-Ua6" secondAttribute="bottom" constant="5" id="Z0R-Mf-zNc"/>
+                            <constraint firstItem="d6Z-UV-Ua6" firstAttribute="leading" secondItem="aGS-7l-TJP" secondAttribute="leading" id="ZTO-B1-Rme"/>
+                            <constraint firstItem="d6Z-UV-Ua6" firstAttribute="top" secondItem="aGS-7l-TJP" secondAttribute="top" id="kpt-sr-DnZ"/>
+                            <constraint firstAttribute="trailing" secondItem="d6Z-UV-Ua6" secondAttribute="trailing" id="pQx-mL-vAc"/>
+                            <constraint firstItem="gOW-ou-qbf" firstAttribute="leading" secondItem="aGS-7l-TJP" secondAttribute="leading" id="tvq-4X-D3P"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFT-uz-sW5">
+                        <rect key="frame" x="264.5" y="20" width="45.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_envelope_icon_me" translatesAutoresizingMaskIntoConstraints="NO" id="oau-kW-EEu">
+                        <rect key="frame" x="237.5" y="18" width="22" height="22"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="HuN-Pm-oCb" secondAttribute="trailing" id="1NE-vX-2fO"/>
+                    <constraint firstItem="HuN-Pm-oCb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6Hb-RN-Zob"/>
+                    <constraint firstAttribute="bottom" secondItem="HuN-Pm-oCb" secondAttribute="bottom" id="83P-Bs-5Da"/>
+                    <constraint firstItem="aGS-7l-TJP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="K63-fs-6lW"/>
+                    <constraint firstItem="vOp-1f-isS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="MpD-uT-chA"/>
+                    <constraint firstAttribute="trailing" secondItem="zFT-uz-sW5" secondAttribute="trailing" constant="10" id="NFP-rd-tcX"/>
+                    <constraint firstItem="vOp-1f-isS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PnO-3C-Wvl"/>
+                    <constraint firstItem="zFT-uz-sW5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XXk-Mz-PSN"/>
+                    <constraint firstItem="aGS-7l-TJP" firstAttribute="leading" secondItem="vOp-1f-isS" secondAttribute="trailing" constant="10" id="myg-dK-9kP"/>
+                    <constraint firstItem="oau-kW-EEu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uQC-UM-LwF"/>
+                    <constraint firstItem="zFT-uz-sW5" firstAttribute="leading" secondItem="oau-kW-EEu" secondAttribute="trailing" constant="5" id="vYm-LE-U7v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="userGrabImageView" destination="oau-kW-EEu" id="52m-Nr-sIM"/>
+                <outlet property="userGrabMoneyLabel" destination="zFT-uz-sW5" id="liR-Sr-ta4"/>
+                <outlet property="userGrabTimeLabel" destination="gOW-ou-qbf" id="MAg-Ny-vm0"/>
+                <outlet property="userIconImageView" destination="vOp-1f-isS" id="RJU-qH-5aC"/>
+                <outlet property="userNameLabel" destination="d6Z-UV-Ua6" id="7jq-Vo-KIa"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeholder_user_male_icon" width="40" height="40"/>
+        <image name="red_envelope_icon_me" width="22" height="22"/>
+    </resources>
+</document>

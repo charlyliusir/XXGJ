@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="29S-2L-Q9v" customClass="XXGJUpdataSexViewController">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="BgU-gO-7Sg"/>
+                <viewControllerLayoutGuide type="bottom" id="tVb-eW-NBa"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="KIm-5p-pid" userLabel="contentView">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view tag="1001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qib-xn-8Cb">
+                        <rect key="frame" x="0.0" y="74" width="375" height="44"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Alg-q1-qSP" userLabel="top line view">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="RbP-9T-2oD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZ6-Po-sVw" userLabel="bottom line view">
+                                <rect key="frame" x="0.0" y="43.5" width="375" height="0.5"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="CDr-Zx-2gb"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qon-pV-EIs">
+                                <rect key="frame" x="10" y="13" width="15.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" tag="2001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_icon_sex_selected" translatesAutoresizingMaskIntoConstraints="NO" id="yRj-dz-uSl">
+                                <rect key="frame" x="343" y="11" width="22" height="22"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Alg-q1-qSP" secondAttribute="trailing" id="3aG-Jh-FGP"/>
+                            <constraint firstAttribute="height" constant="44" id="P4b-lI-Vn7"/>
+                            <constraint firstItem="Qon-pV-EIs" firstAttribute="leading" secondItem="qib-xn-8Cb" secondAttribute="leading" constant="10" id="Pda-An-fCd"/>
+                            <constraint firstItem="uZ6-Po-sVw" firstAttribute="leading" secondItem="qib-xn-8Cb" secondAttribute="leading" id="RsG-MA-KgE"/>
+                            <constraint firstItem="Qon-pV-EIs" firstAttribute="centerY" secondItem="qib-xn-8Cb" secondAttribute="centerY" id="W0H-DX-mDL"/>
+                            <constraint firstItem="yRj-dz-uSl" firstAttribute="centerY" secondItem="qib-xn-8Cb" secondAttribute="centerY" id="YRF-ns-aSi"/>
+                            <constraint firstAttribute="trailing" secondItem="uZ6-Po-sVw" secondAttribute="trailing" id="Z3Q-jB-sZe"/>
+                            <constraint firstAttribute="bottom" secondItem="uZ6-Po-sVw" secondAttribute="bottom" id="qo8-ua-D5K"/>
+                            <constraint firstItem="Alg-q1-qSP" firstAttribute="leading" secondItem="qib-xn-8Cb" secondAttribute="leading" id="slV-fi-t9W"/>
+                            <constraint firstItem="Alg-q1-qSP" firstAttribute="top" secondItem="qib-xn-8Cb" secondAttribute="top" id="vmZ-Sh-Nhs"/>
+                            <constraint firstAttribute="trailing" secondItem="yRj-dz-uSl" secondAttribute="trailing" constant="10" id="zSa-kJ-QId"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="783-0q-1Pb" appends="YES" id="fcf-z0-bYx"/>
+                        </connections>
+                    </view>
+                    <view tag="1002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfB-gS-Owy">
+                        <rect key="frame" x="0.0" y="118" width="375" height="44"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRf-Yh-cfL" userLabel="bottom line view">
+                                <rect key="frame" x="0.0" y="43.5" width="375" height="0.5"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="eKi-7h-2F8"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="女" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5J-KE-TMu">
+                                <rect key="frame" x="10" y="13" width="15.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" tag="2002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_icon_sex_selected" translatesAutoresizingMaskIntoConstraints="NO" id="Rpz-rb-iPK">
+                                <rect key="frame" x="343" y="11" width="22" height="22"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="RRf-Yh-cfL" firstAttribute="leading" secondItem="wfB-gS-Owy" secondAttribute="leading" id="6xt-Fz-WlP"/>
+                            <constraint firstAttribute="trailing" secondItem="RRf-Yh-cfL" secondAttribute="trailing" id="Foe-H0-rHf"/>
+                            <constraint firstAttribute="bottom" secondItem="RRf-Yh-cfL" secondAttribute="bottom" id="LqA-K2-6W8"/>
+                            <constraint firstItem="R5J-KE-TMu" firstAttribute="centerY" secondItem="wfB-gS-Owy" secondAttribute="centerY" id="NhD-AK-dPU"/>
+                            <constraint firstItem="Rpz-rb-iPK" firstAttribute="centerY" secondItem="wfB-gS-Owy" secondAttribute="centerY" id="Oez-Uf-23K"/>
+                            <constraint firstItem="R5J-KE-TMu" firstAttribute="leading" secondItem="wfB-gS-Owy" secondAttribute="leading" constant="10" id="UT4-j7-0mQ"/>
+                            <constraint firstAttribute="height" constant="44" id="Z7G-um-U83"/>
+                            <constraint firstAttribute="trailing" secondItem="Rpz-rb-iPK" secondAttribute="trailing" constant="10" id="zEo-gF-kJa"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2wj-C2-E1V" appends="YES" id="DJC-YU-5dg"/>
+                        </connections>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="wfB-gS-Owy" secondAttribute="trailing" id="WIU-YB-cQe"/>
+                    <constraint firstAttribute="trailing" secondItem="qib-xn-8Cb" secondAttribute="trailing" id="cWI-L2-lKF"/>
+                    <constraint firstItem="wfB-gS-Owy" firstAttribute="leading" secondItem="KIm-5p-pid" secondAttribute="leading" id="cvd-JL-XfA"/>
+                    <constraint firstItem="qib-xn-8Cb" firstAttribute="top" secondItem="KIm-5p-pid" secondAttribute="top" constant="74" id="i6h-g6-Md3"/>
+                    <constraint firstItem="wfB-gS-Owy" firstAttribute="top" secondItem="qib-xn-8Cb" secondAttribute="bottom" id="iaE-Ub-3Ly"/>
+                    <constraint firstItem="qib-xn-8Cb" firstAttribute="leading" secondItem="KIm-5p-pid" secondAttribute="leading" id="wOA-Sj-fbx"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="femaleSelectedImageView" destination="Rpz-rb-iPK" id="pjo-OB-mZh"/>
+                <outlet property="maleSelectedImageView" destination="yRj-dz-uSl" id="laf-1S-gtt"/>
+            </connections>
+            <point key="canvasLocation" x="-53" y="8"/>
+        </viewController>
+        <tapGestureRecognizer id="783-0q-1Pb">
+            <connections>
+                <action selector="tapSelecteSexItem:" destination="29S-2L-Q9v" id="VFK-vx-r1u"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="2wj-C2-E1V">
+            <connections>
+                <action selector="tapSelecteSexItem:" destination="29S-2L-Q9v" id="YZu-zG-FBU"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="profile_icon_sex_selected" width="22" height="22"/>
+    </resources>
+</document>

@@ -1,0 +1,196 @@
+//
+//  XXGJSocketManager.m
+//  XXGJSocketServer
+//
+//  Created by 刘朝龙 on 2017/3/9.
+//  Copyright © 2017年 刘朝龙. All rights reserved.
+//
+
+#import "XXGJSocketManager.h"
+#import <GCDAsyncSocket.h>
+
+@interface XXGJSocketManager()<GCDAsyncSocketDelegate>
+@property (nonatomic, strong)GCDAsyncSocket *socket;
+@property (nonatomic, strong)NSMutableArray *clientsArray;
+@property (nonatomic, assign)BOOL isAutoDisConnect;
+@property (nonatomic, assign)BOOL isFirst;
+@end
+
+@implementation XXGJSocketManager
+
+/**
+ 开始监听端口
+ */
+- (void)startConnectSocket
+{
+    
+    // 1. 创建 socket 对象
+    self.socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    // 2.
+    NSError *error = nil;
+    // 2. 判断是否连接成功
+    if (![self.socket connectToHost:XXGJ_IP onPort:XXGJ_PORT withTimeout:XXGJ_TIMEOUT error:&error]) {
+        // 链接失败
+    }
+    // 3. 如果连接成功,开始接收数据
+    [self.socket readDataWithTimeout:XXGJ_TIMEOUT tag:0];
+    
+}
+
+/**
+ 单例模式实现 Socket 管理
+ 
+ @return 返回 Socket 管理对象
+ */
++ (instancetype)sharedXXGJSocketManager
+{
+    static XXGJSocketManager *manager = nil;
+    static dispatch_once_t t;
+    
+    dispatch_once(&t, ^{
+        manager = [[XXGJSocketManager alloc] init];
+    });
+    
+    return manager;
+}
+
+/**
+ Socket 监听方法
+ */
+- (void)connect
+{
+    [self startConnectSocket];
+}
+
+
+/**
+ Socket 断开链接方法
+ */
+- (void)disconnect
+{
+    [self.socket disconnect];
+    self.socket = nil;
+    self.isAutoDisConnect = YES;
+    self.isFirst = NO;
+    [self.clientsArray removeAllObjects];
+}
+
+#pragma mark - private
+
+/**
+ 发送心跳包
+
+ @param message 心跳包数据
+ */
+//- (void)sendHeartBeat:(IMMessage *)message
+//{
+//    if (self.isFirst)
+//    {
+//        // 如果第一次收到心跳包，开始登陆
+//        self.isFirst = NO;
+//        [[NSNotificationCenter defaultCenter] postNotificationName:XXGJ_SOCKET_CONNECT_HEART object:nil];
+//    }
+//    [self sendMessage:[message messageToString]];
+//}
+
+/**
+ 发送已经接受到消息命令
+
+ @param message 接受到的消息
+ */
+//- (void)sendAckMsg:(IMMessage *)message
+//{
+//    // 发送通知，收到消息, 此处应将数据放入数据库
+//    [[NSNotificationCenter defaultCenter] postNotificationName:XXGJ_SOCKET_REVE_NEW_MESSAGE object:message];
+//    // 创建 ACK 消息对象
+//    IMMessage *ackMessage = message;
+//    ackMessage.MessageType = @(IMAckMessage);
+//    // 修改 ACK 的 Args 参数
+//    [ackMessage createArgsObject:@{@"targetUuid":message.uuid}];
+//    // 发送消息
+//    [self sendMessage:[message messageToAckString]];
+//}
+
+/**
+ 发送聊天消息
+
+ @param message 聊天消息
+ */
+//- (void)sendChatMessage:(IMMessage *)message
+//{
+//    [self sendMessage:[message messageToString]];
+//}
+
+#pragma mark - 交互处理方法
+- (void)sendMessage:(NSString *)message
+{
+    message = [message stringByAppendingString:@"\r\n"];
+    NSLog(@"send message : %@", message);
+    [self.socket writeData:[message dataUsingEncoding:NSUTF8StringEncoding] withTimeout:XXGJ_TIMEOUT tag:-1];
+    [self.socket readDataWithTimeout:XXGJ_TIMEOUT tag:-1];
+}
+
+#pragma mark - GCDAsyncSocket 代理方法
+- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+{
+//    NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    // 1. 将数据转换成 NSString 形式
+    NSDictionary *dict = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+
+//    IMMessage *sHeart = [[IMMessage alloc] init];
+//    [sHeart setValuesForKeysWithDictionary:dict];
+//    IMTypeMessage messagetType  = [sHeart.MessageType unsignedIntegerValue];
+//    IMTypeBusiness businessType = IMBusinessNotFind;
+//    if (sHeart.BusinessType) {
+//        businessType = [IMBusinessType getTypeWithBusiness:sHeart.BusinessType];
+//    }
+//    if ([sHeart.isAck isEqualToNumber:@(true)]) {
+//        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+//    }
+//    
+//    [sHeart logMessageString];
+//    if (messagetType==IMHeartBeat)
+//    {
+//        self.hert = sHeart;
+//        [self sendHeartBeat:sHeart];
+//    }else if (businessType==IMBusinessChatP2P)
+//    {
+//        // 发送接受成功的命令
+//        [self sendAckMsg:sHeart];
+//    }
+    
+    //     3. 继续接收数据
+    [self.socket readDataWithTimeout:XXGJ_TIMEOUT tag:-1];
+}
+
+- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port
+{
+    NSLog(@"socket connect host : %@", host);
+    NSLog(@"socket connect port : %d", port);
+    self.isFirst = YES;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(connectToHost:onPort:error:)])
+    {
+        [self.delegate connectToHost:XXGJ_IP onPort:XXGJ_PORT error:nil];
+    }
+}
+
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
+{
+    [self.clientsArray removeAllObjects];
+    self.socket = nil;
+    self.isFirst = NO;
+    if (self.isAutoDisConnect)
+    {
+        self.isAutoDisConnect = NO;
+    }
+    else
+    {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didDisconnectError:)])
+        {
+            [self.delegate didDisconnectError:err];
+        }
+    }
+}
+
+
+@end

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="LU4-2U-DbL" customClass="XXGJAudioAlertView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9F-XE-HDb">
+                    <rect key="frame" x="120" y="266.5" width="134" height="134"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Recordingbg_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Aoq-mp-TwI">
+                            <rect key="frame" x="0.0" y="0.0" width="134" height="134"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Dx-jV-XV6" userLabel="fotter view">
+                            <rect key="frame" x="0.0" y="0.0" width="134" height="104"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Recordingbg_cancel_icon" translatesAutoresizingMaskIntoConstraints="NO" id="U9v-7S-sR8">
+                            <rect key="frame" x="8" y="104" width="118" height="25"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手指上划，取消发送" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f2-Qa-NTQ">
+                            <rect key="frame" x="11.5" y="109.5" width="110.5" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RecordCancel" translatesAutoresizingMaskIntoConstraints="NO" id="eGd-QG-yUp">
+                            <rect key="frame" x="47" y="24.5" width="40" height="55"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWI-L3-Er6">
+                            <rect key="frame" x="37.5" y="24.5" width="59" height="55"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RecordingBkg" translatesAutoresizingMaskIntoConstraints="NO" id="9Fw-e3-GV5">
+                                    <rect key="frame" x="0.0" y="0.0" width="35" height="55"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RecordingSignal009" translatesAutoresizingMaskIntoConstraints="NO" id="DfP-lN-wXe" userLabel="RecordingSignal001">
+                                    <rect key="frame" x="45" y="9" width="14" height="46"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="9Fw-e3-GV5" firstAttribute="leading" secondItem="KWI-L3-Er6" secondAttribute="leading" id="01d-xr-GIX"/>
+                                <constraint firstItem="DfP-lN-wXe" firstAttribute="bottom" secondItem="9Fw-e3-GV5" secondAttribute="bottom" id="GIW-ac-sPK"/>
+                                <constraint firstAttribute="trailing" secondItem="DfP-lN-wXe" secondAttribute="trailing" id="Mhl-gq-nu1"/>
+                                <constraint firstItem="9Fw-e3-GV5" firstAttribute="top" secondItem="KWI-L3-Er6" secondAttribute="top" id="ROG-LS-nzv"/>
+                                <constraint firstAttribute="bottom" secondItem="9Fw-e3-GV5" secondAttribute="bottom" id="aIe-YH-UbE"/>
+                                <constraint firstItem="DfP-lN-wXe" firstAttribute="leading" secondItem="9Fw-e3-GV5" secondAttribute="trailing" constant="10" id="xrs-VJ-FpK"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="3f2-Qa-NTQ" firstAttribute="centerY" secondItem="U9v-7S-sR8" secondAttribute="centerY" id="3G8-pQ-h87"/>
+                        <constraint firstItem="3f2-Qa-NTQ" firstAttribute="centerX" secondItem="U9v-7S-sR8" secondAttribute="centerX" id="5E0-CZ-452"/>
+                        <constraint firstAttribute="bottom" secondItem="U9v-7S-sR8" secondAttribute="bottom" constant="5" id="8IV-B6-LgZ"/>
+                        <constraint firstItem="Aoq-mp-TwI" firstAttribute="centerY" secondItem="W9F-XE-HDb" secondAttribute="centerY" id="Aj4-B6-F7h"/>
+                        <constraint firstItem="1Dx-jV-XV6" firstAttribute="bottom" secondItem="U9v-7S-sR8" secondAttribute="top" id="B4j-iw-qHS"/>
+                        <constraint firstItem="1Dx-jV-XV6" firstAttribute="top" secondItem="W9F-XE-HDb" secondAttribute="top" id="E2x-rs-9OD"/>
+                        <constraint firstAttribute="width" constant="134" id="F2K-2c-zZG"/>
+                        <constraint firstAttribute="height" constant="134" id="F3m-6n-uD5"/>
+                        <constraint firstAttribute="trailing" secondItem="1Dx-jV-XV6" secondAttribute="trailing" id="Hoq-rh-McT"/>
+                        <constraint firstItem="eGd-QG-yUp" firstAttribute="centerY" secondItem="1Dx-jV-XV6" secondAttribute="centerY" id="Oe9-Xz-oak"/>
+                        <constraint firstItem="KWI-L3-Er6" firstAttribute="centerY" secondItem="eGd-QG-yUp" secondAttribute="centerY" id="ctw-c9-ySF"/>
+                        <constraint firstItem="eGd-QG-yUp" firstAttribute="centerX" secondItem="1Dx-jV-XV6" secondAttribute="centerX" id="gms-Fc-kDA"/>
+                        <constraint firstAttribute="trailing" secondItem="U9v-7S-sR8" secondAttribute="trailing" constant="8" id="h9r-nu-lIx"/>
+                        <constraint firstItem="U9v-7S-sR8" firstAttribute="leading" secondItem="W9F-XE-HDb" secondAttribute="leading" constant="8" id="pLm-Jq-bS0"/>
+                        <constraint firstItem="Aoq-mp-TwI" firstAttribute="centerX" secondItem="W9F-XE-HDb" secondAttribute="centerX" id="tPv-Q9-UFf"/>
+                        <constraint firstItem="1Dx-jV-XV6" firstAttribute="leading" secondItem="W9F-XE-HDb" secondAttribute="leading" id="xTj-eF-tte"/>
+                        <constraint firstItem="KWI-L3-Er6" firstAttribute="centerX" secondItem="eGd-QG-yUp" secondAttribute="centerX" id="xep-3O-AZm"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="W9F-XE-HDb" firstAttribute="centerY" secondItem="LU4-2U-DbL" secondAttribute="centerY" id="HAe-or-f5c"/>
+                <constraint firstItem="W9F-XE-HDb" firstAttribute="centerX" secondItem="LU4-2U-DbL" secondAttribute="centerX" id="vLP-pe-fFh"/>
+            </constraints>
+            <connections>
+                <outlet property="alertTitileLabel" destination="3f2-Qa-NTQ" id="qTU-EG-UAV"/>
+                <outlet property="audioRecordView" destination="KWI-L3-Er6" id="XXE-oC-iTr"/>
+                <outlet property="cancelImageView" destination="eGd-QG-yUp" id="YWj-TT-fVB"/>
+                <outlet property="cancelLabelBgView" destination="U9v-7S-sR8" id="7hX-lP-8Pe"/>
+                <outlet property="valueVolumeImageView" destination="DfP-lN-wXe" id="FS7-vz-Jl8"/>
+            </connections>
+            <point key="canvasLocation" x="-9.5" y="12.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="RecordCancel" width="40" height="55"/>
+        <image name="RecordingBkg" width="35" height="55"/>
+        <image name="RecordingSignal009" width="14" height="46"/>
+        <image name="Recordingbg_cancel_icon" width="118" height="25"/>
+        <image name="Recordingbg_icon" width="134" height="134"/>
+    </resources>
+</document>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="decorateTopCell" id="bV3-ih-H6H" customClass="XXGJDecorateTopCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNz-U4-dpq">
+                        <rect key="frame" x="10" y="10" width="355" height="96"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="decorate_top_first_icon" translatesAutoresizingMaskIntoConstraints="NO" id="9B4-YZ-yHE">
+                                <rect key="frame" x="15" y="26.5" width="43" height="43"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CxA-sC-qdI">
+                                <rect key="frame" x="73" y="27.5" width="98.5" height="41.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="装修任务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPl-MI-tFp">
+                                        <rect key="frame" x="0.0" y="0.0" width="61.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="了解你的装修任务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfh-sF-f7Y">
+                                        <rect key="frame" x="0.0" y="27" width="98.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Gfh-sF-f7Y" firstAttribute="leading" secondItem="bPl-MI-tFp" secondAttribute="leading" id="2Xy-9r-oSO"/>
+                                    <constraint firstItem="bPl-MI-tFp" firstAttribute="leading" secondItem="CxA-sC-qdI" secondAttribute="leading" id="9je-aI-nZy"/>
+                                    <constraint firstItem="bPl-MI-tFp" firstAttribute="top" secondItem="CxA-sC-qdI" secondAttribute="top" id="CX4-Bm-yxt"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gfh-sF-f7Y" secondAttribute="bottom" id="IWg-NS-GPT"/>
+                                    <constraint firstItem="Gfh-sF-f7Y" firstAttribute="top" secondItem="bPl-MI-tFp" secondAttribute="bottom" constant="9" id="WB5-Cu-Ayz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gfh-sF-f7Y" secondAttribute="trailing" id="z5l-T1-7MC"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_icon_arraw" translatesAutoresizingMaskIntoConstraints="NO" id="NYb-08-icz">
+                                <rect key="frame" x="323" y="37" width="22" height="22"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NYb-08-icz" secondAttribute="trailing" constant="10" id="2NI-nu-dWw"/>
+                            <constraint firstItem="CxA-sC-qdI" firstAttribute="leading" secondItem="9B4-YZ-yHE" secondAttribute="trailing" constant="15" id="AcP-AB-Qk1"/>
+                            <constraint firstItem="CxA-sC-qdI" firstAttribute="centerY" secondItem="XNz-U4-dpq" secondAttribute="centerY" id="BG4-wb-p2t"/>
+                            <constraint firstItem="9B4-YZ-yHE" firstAttribute="leading" secondItem="XNz-U4-dpq" secondAttribute="leading" constant="15" id="dCD-Kf-mkF"/>
+                            <constraint firstItem="NYb-08-icz" firstAttribute="centerY" secondItem="XNz-U4-dpq" secondAttribute="centerY" id="dEy-x0-N0e"/>
+                            <constraint firstItem="9B4-YZ-yHE" firstAttribute="centerY" secondItem="XNz-U4-dpq" secondAttribute="centerY" id="qvO-3t-XcF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="XNz-U4-dpq" firstAttribute="top" secondItem="bV3-ih-H6H" secondAttribute="top" constant="10" id="1ju-pI-6xe"/>
+                <constraint firstAttribute="bottom" secondItem="XNz-U4-dpq" secondAttribute="bottom" id="K55-5s-Cbn"/>
+                <constraint firstItem="XNz-U4-dpq" firstAttribute="leading" secondItem="bV3-ih-H6H" secondAttribute="leading" constant="10" id="SX0-Pz-Afk"/>
+                <constraint firstAttribute="trailing" secondItem="XNz-U4-dpq" secondAttribute="trailing" constant="10" id="dWq-Dj-IMw"/>
+            </constraints>
+            <size key="customSize" width="248" height="50"/>
+            <connections>
+                <outlet property="iconImageView" destination="9B4-YZ-yHE" id="Ds2-4I-myt"/>
+                <outlet property="subTitleLabel" destination="Gfh-sF-f7Y" id="rqZ-wO-wbH"/>
+                <outlet property="titleLabel" destination="bPl-MI-tFp" id="k35-5f-bNY"/>
+            </connections>
+            <point key="canvasLocation" x="65.5" y="8"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cell_icon_arraw" width="22" height="22"/>
+        <image name="decorate_top_first_icon" width="43" height="43"/>
+    </resources>
+</document>

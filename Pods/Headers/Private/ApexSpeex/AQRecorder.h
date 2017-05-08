@@ -1,0 +1,1 @@
+../../../ApexSpeex/Pod/Classes/AQRecorder.h

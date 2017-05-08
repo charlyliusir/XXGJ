@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="N79-rQ-uCg" customClass="XXGJGrabRedEnvelopeStatusView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_envelope_icon_open_big_bg" translatesAutoresizingMaskIntoConstraints="NO" id="8iP-Ny-gFB">
+                    <rect key="frame" x="25" y="96" width="325" height="475"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6X-Ww-deP">
+                    <rect key="frame" x="35" y="106" width="22" height="22"/>
+                    <state key="normal" backgroundImage="red_envelope_icon_open_close"/>
+                    <connections>
+                        <action selector="dismissGrabRedEnvelopeStatusView:" destination="N79-rQ-uCg" eventType="touchUpInside" id="0aB-cY-Qdg"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_user_male_icon" translatesAutoresizingMaskIntoConstraints="NO" id="7kq-GW-O5R">
+                    <rect key="frame" x="157" y="166" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="If7-BL-niR"/>
+                        <constraint firstAttribute="height" constant="60" id="p3t-ZI-pLL"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="0.14117647058823529" green="0.51372549019607838" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="龙宝宝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OF3-o1-sSj">
+                    <rect key="frame" x="163" y="236" width="49" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.99215686274509807" green="0.94117647058823528" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="给你发了一个红包" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OI-pD-ceZ">
+                    <rect key="frame" x="138.5" y="265.5" width="98.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.99215686270000003" green="0.94117647059999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜发财，万事大吉" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-c0-b4a">
+                    <rect key="frame" x="87" y="310" width="201" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" red="0.99215686270000003" green="0.94117647059999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMc-qO-bcs">
+                    <rect key="frame" x="139.5" y="371.5" width="96" height="96"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                    <state key="normal" title="拆" backgroundImage="red_envelope_icon_open_bg">
+                        <color key="titleColor" red="0.24313725490196078" green="0.23529411764705882" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="grabRedEnvelope:" destination="N79-rQ-uCg" eventType="touchUpInside" id="RzV-ot-cHP"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ju7-Fr-Wd0" userLabel="open view">
+                    <rect key="frame" x="139" y="532" width="97" height="29"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wil-Pk-D3a">
+                            <rect key="frame" x="0.0" y="0.0" width="86" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="查看红包详情">
+                                <color key="titleColor" red="0.99215686270000003" green="0.94117647059999998" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="showGrabRedEnvelopeInfo:" destination="N79-rQ-uCg" eventType="touchUpInside" id="Me5-fb-p3J"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcM-a5-8Mz">
+                            <rect key="frame" x="91" y="9.5" width="6" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="WIl-Kh-Lrv"/>
+                                <constraint firstAttribute="width" constant="6" id="hEQ-IC-VGJ"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="red_envelope_arraw_icon"/>
+                            <connections>
+                                <action selector="showGrabRedEnvelopeInfo:" destination="N79-rQ-uCg" eventType="touchUpInside" id="ilj-FA-Pt5"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="EcM-a5-8Mz" secondAttribute="trailing" id="8mv-pR-Ib2"/>
+                        <constraint firstItem="wil-Pk-D3a" firstAttribute="leading" secondItem="Ju7-Fr-Wd0" secondAttribute="leading" id="Xlp-eo-Zkn"/>
+                        <constraint firstItem="wil-Pk-D3a" firstAttribute="top" secondItem="Ju7-Fr-Wd0" secondAttribute="top" id="aVN-oQ-su9"/>
+                        <constraint firstItem="EcM-a5-8Mz" firstAttribute="leading" secondItem="wil-Pk-D3a" secondAttribute="trailing" constant="5" id="bw9-A8-jXg"/>
+                        <constraint firstItem="EcM-a5-8Mz" firstAttribute="centerY" secondItem="wil-Pk-D3a" secondAttribute="centerY" id="drx-YA-xF8"/>
+                        <constraint firstAttribute="bottom" secondItem="wil-Pk-D3a" secondAttribute="bottom" id="rWb-y3-mi5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="rMc-qO-bcs" firstAttribute="centerX" secondItem="N79-rQ-uCg" secondAttribute="centerX" id="71h-Br-9AS"/>
+                <constraint firstItem="8iP-Ny-gFB" firstAttribute="centerX" secondItem="N79-rQ-uCg" secondAttribute="centerX" id="B7I-Qs-YiO"/>
+                <constraint firstItem="a6X-Ww-deP" firstAttribute="top" secondItem="8iP-Ny-gFB" secondAttribute="top" constant="10" id="Bc7-gw-eTX"/>
+                <constraint firstItem="rMc-qO-bcs" firstAttribute="top" secondItem="jgX-c0-b4a" secondAttribute="bottom" constant="35" id="IBf-qj-UzZ"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jgX-c0-b4a" secondAttribute="trailing" constant="40" id="Mey-47-O8W"/>
+                <constraint firstItem="jgX-c0-b4a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="N79-rQ-uCg" secondAttribute="leading" constant="40" id="PMZ-5p-icC"/>
+                <constraint firstItem="a6X-Ww-deP" firstAttribute="leading" secondItem="8iP-Ny-gFB" secondAttribute="leading" constant="10" id="QWV-36-3L3"/>
+                <constraint firstItem="0OI-pD-ceZ" firstAttribute="centerX" secondItem="N79-rQ-uCg" secondAttribute="centerX" id="R2m-rL-zmu"/>
+                <constraint firstItem="0OI-pD-ceZ" firstAttribute="top" secondItem="OF3-o1-sSj" secondAttribute="bottom" constant="10" id="SoS-d7-WLT"/>
+                <constraint firstItem="jgX-c0-b4a" firstAttribute="top" secondItem="0OI-pD-ceZ" secondAttribute="bottom" constant="30" id="UEr-Fa-boe"/>
+                <constraint firstItem="7kq-GW-O5R" firstAttribute="top" secondItem="a6X-Ww-deP" secondAttribute="bottom" constant="38" id="cud-Dz-1qq"/>
+                <constraint firstItem="Ju7-Fr-Wd0" firstAttribute="bottom" secondItem="8iP-Ny-gFB" secondAttribute="bottom" constant="-10" id="fJK-hO-nv8"/>
+                <constraint firstItem="OF3-o1-sSj" firstAttribute="top" secondItem="7kq-GW-O5R" secondAttribute="bottom" constant="10" id="gGq-H9-UGc"/>
+                <constraint firstItem="7kq-GW-O5R" firstAttribute="centerX" secondItem="N79-rQ-uCg" secondAttribute="centerX" id="gr3-OY-KwQ"/>
+                <constraint firstItem="Ju7-Fr-Wd0" firstAttribute="centerX" secondItem="N79-rQ-uCg" secondAttribute="centerX" id="kR1-Cc-XRk"/>
+                <constraint firstItem="8iP-Ny-gFB" firstAttribute="centerY" secondItem="N79-rQ-uCg" secondAttribute="centerY" id="twD-Ci-0KF"/>
+                <constraint firstItem="jgX-c0-b4a" firstAttribute="centerX" secondItem="N79-rQ-uCg" secondAttribute="centerX" id="ugq-Gl-WY3"/>
+                <constraint firstItem="OF3-o1-sSj" firstAttribute="centerX" secondItem="N79-rQ-uCg" secondAttribute="centerX" id="ui1-km-52N"/>
+            </constraints>
+            <connections>
+                <outlet property="grabRedEnvelopeBtn" destination="rMc-qO-bcs" id="6Y7-0h-U8H"/>
+                <outlet property="redEnvelopeRemarkLabel" destination="jgX-c0-b4a" id="wua-qj-3sl"/>
+                <outlet property="showInfoView" destination="Ju7-Fr-Wd0" id="KEn-Gt-7Jo"/>
+                <outlet property="subTitleLabel" destination="0OI-pD-ceZ" id="iTg-1d-efx"/>
+                <outlet property="userIconImageView" destination="7kq-GW-O5R" id="QNV-Lt-pKZ"/>
+                <outlet property="userNameLabel" destination="OF3-o1-sSj" id="thV-oy-fkW"/>
+            </connections>
+            <point key="canvasLocation" x="-67" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholder_user_male_icon" width="40" height="40"/>
+        <image name="red_envelope_arraw_icon" width="6" height="10"/>
+        <image name="red_envelope_icon_open_bg" width="96" height="96"/>
+        <image name="red_envelope_icon_open_big_bg" width="325" height="475"/>
+        <image name="red_envelope_icon_open_close" width="22" height="22"/>
+    </resources>
+</document>

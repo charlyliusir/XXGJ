@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="x9n-C1-3yk" customClass="XXGJUpdateAddressView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uob-ta-goj">
+                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="216" id="eAA-UD-aOs"/>
+                    </constraints>
+                </pickerView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bF6-rg-G2g">
+                    <rect key="frame" x="0.0" y="407" width="375" height="44"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcV-P9-B5R" userLabel="top line view">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
+                            <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="1Z7-j6-rJw"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2Z-jA-Ppn" userLabel="bottom line view">
+                            <rect key="frame" x="0.0" y="43.5" width="375" height="0.5"/>
+                            <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="SSI-jk-Ipo"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXT-9p-lwI">
+                            <rect key="frame" x="10" y="7" width="31" height="30"/>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelAction:" destination="x9n-C1-3yk" eventType="touchUpInside" id="SaK-Ms-X8N"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFF-ZK-uaa">
+                            <rect key="frame" x="334" y="7" width="31" height="30"/>
+                            <state key="normal" title="确定"/>
+                            <connections>
+                                <action selector="confirmAction:" destination="x9n-C1-3yk" eventType="touchUpInside" id="7u6-qm-toH"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="4DY-QH-Q4t"/>
+                        <constraint firstItem="G2Z-jA-Ppn" firstAttribute="leading" secondItem="bF6-rg-G2g" secondAttribute="leading" id="8Ub-GB-g4w"/>
+                        <constraint firstAttribute="trailing" secondItem="G2Z-jA-Ppn" secondAttribute="trailing" id="OnM-Fg-7sA"/>
+                        <constraint firstAttribute="trailing" secondItem="BFF-ZK-uaa" secondAttribute="trailing" constant="10" id="ZCq-lV-4m9"/>
+                        <constraint firstItem="GXT-9p-lwI" firstAttribute="leading" secondItem="bF6-rg-G2g" secondAttribute="leading" constant="10" id="cZQ-cb-Dbw"/>
+                        <constraint firstAttribute="trailing" secondItem="YcV-P9-B5R" secondAttribute="trailing" id="hAg-ne-HwB"/>
+                        <constraint firstItem="BFF-ZK-uaa" firstAttribute="centerY" secondItem="bF6-rg-G2g" secondAttribute="centerY" id="hH4-fC-t8f"/>
+                        <constraint firstItem="YcV-P9-B5R" firstAttribute="top" secondItem="bF6-rg-G2g" secondAttribute="top" id="hvw-wa-0EF"/>
+                        <constraint firstItem="GXT-9p-lwI" firstAttribute="centerY" secondItem="bF6-rg-G2g" secondAttribute="centerY" id="mef-md-ry7"/>
+                        <constraint firstAttribute="bottom" secondItem="G2Z-jA-Ppn" secondAttribute="bottom" id="n5C-GJ-KR1"/>
+                        <constraint firstItem="YcV-P9-B5R" firstAttribute="leading" secondItem="bF6-rg-G2g" secondAttribute="leading" id="oyC-ve-pVO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="uob-ta-goj" secondAttribute="trailing" id="033-1L-VTS"/>
+                <constraint firstItem="uob-ta-goj" firstAttribute="leading" secondItem="x9n-C1-3yk" secondAttribute="leading" id="0xp-s2-SF7"/>
+                <constraint firstItem="bF6-rg-G2g" firstAttribute="bottom" secondItem="uob-ta-goj" secondAttribute="top" id="4U0-ao-oKM"/>
+                <constraint firstAttribute="trailing" secondItem="bF6-rg-G2g" secondAttribute="trailing" id="7yY-Ea-KeU"/>
+                <constraint firstAttribute="bottom" secondItem="uob-ta-goj" secondAttribute="bottom" id="PH0-IR-Fg4"/>
+                <constraint firstItem="bF6-rg-G2g" firstAttribute="leading" secondItem="x9n-C1-3yk" secondAttribute="leading" id="lVf-Wa-WeM"/>
+            </constraints>
+            <connections>
+                <outlet property="pickerView" destination="uob-ta-goj" id="lov-mg-RDN"/>
+            </connections>
+            <point key="canvasLocation" x="-182" y="-324"/>
+        </view>
+    </objects>
+</document>

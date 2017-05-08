@@ -1,0 +1,276 @@
+//
+//  XXGJNetKit.m
+//  xxdcchat_ios
+//
+//  Created by 刘朝龙 on 2017/3/16.
+//  Copyright © 2017年 刘朝龙. All rights reserved.
+//
+
+#import "XXGJNetKit.h"
+#import "XXGJNetworkingKit.h"
+
+@implementation XXGJNetKit
++ (NSString *)reqUrlWithpFile:(NSString *)pFile cFile:(NSString *)cFile
+{
+    return [NSString stringWithFormat:@"%@%@%@", XXGJ_N_BASE_URL, pFile, cFile];
+}
+
++ (void)login:(NSDictionary *)param  rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_USER cFile:XXGJ_N_CFILE_USER_LOGIN];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
++ (void)logout:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_USER cFile:XXGJ_N_CFILE_USER_LOGOUT];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
++ (void)searchUserList:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_USER cFile:XXGJ_N_CFILE_USER_GETALL];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
++ (void)setAvoidRemind:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_USER cFile:XXGJ_N_CFILE_USER_REMIND];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
++ (void)getPersonRelation:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_USER cFile:XXGJ_N_CFILE_USER_RELATION];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+
+}
+
++ (void)getFriendList:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_FRIEND cFile:XXGJ_N_CFILE_FRIEND_LIST];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
++ (void)getFriend:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_FRIEND cFile:XXGJ_N_CFILE_FRIEND_GET];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
++ (void)addFriend:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_FRIEND cFile:XXGJ_N_CFILE_FRIEND_ADD];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
++ (void)confirmFriend:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_FRIEND cFile:XXGJ_N_CFILE_FRIEND_CONFIRM];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
++ (void)deleteFriend:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_FRIEND cFile:XXGJ_N_CFILE_FRIEND_DELETE];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 创建一个群聊
+ 
+ @param param 创建参数[1.create_id 2.group_name 3. group_desc 4. users]
+ ** 注意：create_id 为必填参数 *
+ ** 注意：users、group_desc 为选填参数 *
+ ** 注意：users 是一个用户数组格式为 users:[{user_id:1},{user_id:2}] *
+ @param block 回调方法
+ */
++ (void)createGroup:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_GROUP cFile:XXGJ_N_PFILE_GROUP_CREATE];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 添加群友
+ 
+ @param param 添加参数[1.user_id 2. friend_id 3. group_id 4. is_system]
+ ** 注意：friend_id 是被邀请好友id，逗号分隔 "friend_id":"123,234" *
+ @param block 回调方法
+ */
++ (void)addGroupMember:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_GROUP cFile:XXGJ_N_PFILE_GROUP_ADDMB];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 群主踢人
+ 
+ @param param 踢人参数[1. user_id 2. group_id 3. friend_id]
+ ** 注意：friend_id 是被踢人的id，逗号分隔 "friend_id":"123,234" *
+ @param block 回调方法
+ */
++ (void)removeGroupMember:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_GROUP cFile:XXGJ_N_PFILE_GROUP_REMOVEMB];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 退群
+ 
+ @param param 退群参数 [1. user_id 2. group_id]
+ @param block 回调方法
+ */
++ (void)leaveGroup:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_GROUP cFile:XXGJ_N_PFILE_GROUP_LEAVE];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 编辑群信息
+ 
+ @param param 编辑参数[1. group_id 2. group_name 3. group_desc]
+ @param block 回调方法
+ */
++ (void)editGroup:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_GROUP cFile:XXGJ_N_PFILE_GROUP_EDIT];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 获取我的群组信息
+ 
+ @param param 获取参数[1. user_id 2. currentPage 3. pageSize 4. group_name]
+ ** 注意：此处 group_name 需要进一步了解功能 *
+ @param block 回调方法
+ */
++ (void)getMyGroups:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_GROUP cFile:XXGJ_N_PFILE_GROUP_MYLIST];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 判断自己是否在该群组里
+ 
+ @param param 判断参数[1. user_id 2. group_id]
+ @param block 回调方法
+ */
++ (void)checkInGroup:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_GROUP cFile:XXGJ_N_PFILE_GROUP_GETGROUPRELATION];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 查找一个群组
+ 
+ @param param 查找参数[1. group_id]
+ @param block 回调方法
+ */
++ (void)searchGroup:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_GROUP cFile:XXGJ_N_PFILE_GROUP_GET];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 查找群组列表
+ 
+ @param param 查找参数[1.group_name 2. currentPage 3. pageSize]
+ @param block 回调方法
+ */
++ (void)searchGroupList:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_GROUP cFile:XXGJ_N_PFILE_GROUP_LIST];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 获取当前消息免打扰设置
+ 
+ @param param 获取设置参数[1. user_id，2. friend_id，3. type]
+ ** 注意 user_id是当前用户id *
+ ** 注意 friend_id是好友或群id *
+ ** 注意 type：0好友  1群 *
+ @param block 回调方法
+ */
++ (void)getLocalSet:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_RELATION cFile:XXGJ_N_PFILE_RELATION_GETLOCALSET];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 发红包
+ 
+ @param param 发红包参数[1. sessionKey: 2. userId 3. isGroup: 4. num: 5. targetId 6. isRandom 7. amount]
+ @param block 回调方法
+ */
++ (void)sendRedEnvelope:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_REDENVELOPE cFile:XXGJ_N_PFILE_REDENVELOPE_SAVE];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+/**
+ 抢红包接口
+ 
+ @param param 抢红包参数[1. sessionKey 2. userId 3. redEnvelopeId]
+ @param block 回调方法
+ */
++ (void)grabRedEnvelope:(NSDictionary *)param rBlock:(rBlock)block
+{
+    NSString *reqUrl = [XXGJNetKit reqUrlWithpFile:XXGJ_N_PFILE_REDENVELOPE cFile:XXGJ_N_PFILE_REDENVELOPE_GRAB];
+    [XXGJNetworkingKit RequestWithURL:reqUrl parameters:param responseblock:^(id responseObj, BOOL success, NSError *error) {
+        block(responseObj, success, error);
+    }];
+}
+
+@end

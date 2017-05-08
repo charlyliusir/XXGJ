@@ -1,0 +1,295 @@
+//
+//  XXGJNetKit.h
+//  xxdcchat_ios
+//
+//  Created by 刘朝龙 on 2017/3/16.
+//  Copyright © 2017年 刘朝龙. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+/**
+ 网络请求回调
+ 
+ @param obj 请求数据
+ @param success 网络请求是否成功
+ @param error 错误信息
+ */
+typedef void(^rBlock)(id obj, BOOL success, NSError *error);
+
+/**
+ *  网络请求,请求进度 block
+ *
+ *  @param downloadProgress 进度条
+ */
+typedef void(^rProgress)(NSProgress * downloadProgress);
+
+@interface XXGJNetKit : NSObject
+#include "XXGJNetKitHeader.h"
+
+/**
+ 业务登录请求
+ 
+ @param param 登录参数 [1.user_name, 2.password]
+ @param block 回调方法
+ */
++ (void)login:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 聊天登录请求
+
+ @param param 登录参数 [1.user_id, 2.uuid, 3.session_key]
+ @param block 回调方法
+ */
++ (void)loginChat:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 退出登录请求
+
+ @param param 退出登录参数 [1. session_key]
+ @param block 回调方法
+ */
++ (void)logout:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 退出业务登录
+
+ @param param 参数
+ @param block 回调
+ */
++ (void)logoutBussines:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 修改用户信息
+
+ @param param 用户信息参数
+ @param block 回调方法
+ */
++ (void)updateUserInfo:(NSDictionary *)param rBlock:(rBlock)block;
+/**
+ 上传用户的token信息
+
+ @param param 上传token参数[1. userId 2. tocken]
+ @param block 回调方法
+ */
++ (void)uploadToken:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 根据用户名查询全体用户列表
+ 
+ @param param 查询参数 [1. nick_name 2. current_page 3. page_size]
+ @param block 回调方法
+ */
++ (void)searchUserList:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 设置消息免打扰
+
+ @param param 免打扰参数[1. user_id  2. friend_id  3. type  4. status]
+                ** 注意: user_id是当前用户id *
+                ** 注意: friend_id是好友或群id *
+                ** 注意: type：0好友  1群 *
+                ** 注意: status：1开启消息免打扰 *
+                ** 注意: 0：关闭消息免打扰 *
+ @param block 回调方法
+ */
++ (void)setAvoidRemind:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 获取用户跟自己的关系
+
+ @param param 获取关系参数 [1. user_id, 2. from_user_id]
+ @param block 回调方法
+ */
++ (void)getPersonRelation:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 获取好友列表
+
+ @param param 获取好友列表参数 [1. user_id 2. relation_type 3. currentPage 4. pageSize 5. nick_name]
+        ** 注意：relation_type 0-个人好友 1-群好友 *
+        ** 注意：nick_name 为选填参数 *
+ @param block 回调方法
+ */
++ (void)getFriendList:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 获取好友信息
+
+ @param param 好友信息参数 [1. user_id]
+ @param block 回调方法
+ */
++ (void)getFriend:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 添加好友
+
+ @param param 添加好友参数 [1. user_id 2. target_id]
+ @param block 回调方法
+ */
++ (void)addFriend:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 是否同意添加好友
+
+ @param param 选择参数[1.relation_id 2. relation_status]
+ @param block 回调方法
+ */
++ (void)confirmFriend:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 删除好友
+
+ @param param 删除参数 [1.user_id 2.target_id]
+ @param block 回调方法
+ */
++ (void)deleteFriend:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 创建一个群聊
+
+ @param param 创建参数[1.create_id 2.group_name 3. group_desc 4. users]
+                ** 注意：create_id 为必填参数 *
+                ** 注意：users、group_desc 为选填参数 *
+                ** 注意：users 是一个用户数组格式为 users:[{user_id:1},{user_id:2}] *
+ @param block 回调方法
+ */
++ (void)createGroup:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 添加群友
+
+ @param param 添加参数[1.user_id 2. friend_id 3. group_id 4. is_system]
+                 ** 注意：friend_id 是被邀请好友id，逗号分隔 "friend_id":"123,234" *
+ @param block 回调方法
+ */
++ (void)addGroupMember:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 群主踢人
+
+ @param param 踢人参数[1. user_id 2. group_id 3. friend_id]
+                ** 注意：friend_id 是被踢人的id，逗号分隔 "friend_id":"123,234" *
+ @param block 回调方法
+ */
++ (void)removeGroupMember:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 退群
+
+ @param param 退群参数 [1. user_id 2. group_id]
+ @param block 回调方法
+ */
++ (void)leaveGroup:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 编辑群信息
+
+ @param param 编辑参数[1. group_id 2. group_name 3. group_desc]
+ @param block 回调方法
+ */
++ (void)editGroup:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 获取我的群组信息
+
+ @param param 获取参数[1. user_id 2. currentPage 3. pageSize 4. group_name]
+                ** 注意：此处 group_name 需要进一步了解功能 *
+ @param block 回调方法
+ */
++ (void)getMyGroups:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 判断自己是否在该群组里
+
+ @param param 判断参数[1. user_id 2. group_id]
+ @param block 回调方法
+ */
++ (void)checkInGroup:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 查找一个群组
+
+ @param param 查找参数[1. group_id]
+ @param block 回调方法
+ */
++ (void)searchGroup:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 查找群组列表
+
+ @param param 查找参数[1.group_name 2. currentPage 3. pageSize]
+ @param block 回调方法
+ */
++ (void)searchGroupList:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 获取当前消息免打扰设置
+
+ @param param 获取设置参数[1. user_id，2. friend_id，3. type]
+                ** 注意 user_id是当前用户id *
+                ** 注意 friend_id是好友或群id *
+                ** 注意 type：0好友  1群 *
+ @param block 回调方法
+ */
++ (void)getLocalSet:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 发红包
+
+ @param param 发红包参数[1. sessionKey: 2. userId 3. isGroup: 4. num: 5. targetId 6. isRandom 7. amount]
+ @param block 回调方法
+ */
++ (void)sendRedEnvelope:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 抢红包接口
+
+ @param param 抢红包参数[1. sessionKey 2. userId 3. redEnvelopeId]
+ @param block 回调方法
+ */
++ (void)grabRedEnvelope:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 红包详情接口
+ 
+ @param param 抢红包参数[1. sessionKey 2. userId 3. redEnvelopeId]
+ @param block 回调方法
+ */
++ (void)grabRedEnvelopeStatus:(NSDictionary *)param rBlock:(rBlock)block;
+
+/**
+ 上传头像接口
+ 
+ @param param 图片数据
+ @param block 回调方法
+ */
++ (void)uploadAvatarImageWithData:(NSDictionary *)param  rBlock:(rBlock)block;
+
+/**
+ 上传图片接口
+
+ @param imageData 图片数据
+ @param block 回调方法
+ */
++ (void)uploadImageWithData:(NSData *)imageData rProgress:(rProgress)progress rBlock:(rBlock)block;
+
+
+/**
+ 异步下载语音数据
+
+ @param audioUrl 语音地址
+ @param fileName 本地保持地址
+ @param block block 回调
+ */
++ (void)downloadAudio:(NSString *)audioUrl withFileName:(NSString *)fileName rBlock:(rBlock)block;
+
+/**
+ 请求支付账单信息
+
+ @param payMainId 支付账单编号
+ @param block 回调
+ */
++ (void)getPayInfoWithPayMainId:(NSString *)payMainId rBlock:(rBlock)block;
+
+@end

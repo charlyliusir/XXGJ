@@ -1,0 +1,30 @@
+//
+//  xxdcchat.pch
+//  xxdcchat_ios
+//
+//  Created by 刘朝龙 on 2017/3/15.
+//  Copyright © 2017年 刘朝龙. All rights reserved.
+//
+
+#ifndef xxdcchat_pch
+#define xxdcchat_pch
+
+#define XX_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
+#define XX_RGBCOLOR(r, g, b, a) [UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:(b/255.0f) alpha:a]
+#define XX_RGBCOLOR_WITHOUTA(r, g, b) XX_RGBCOLOR(r, g, b, 1.0f)
+
+#pragma mark - 颜色设置
+#define XX_BACKGROUND_COLOR XX_RGBCOLOR_WITHOUTA(238.0f, 238.0f, 238.0f)
+
+#define XX_NAVIGATIONBAR_BARTINTCOLOR XX_RGBCOLOR_WITHOUTA(32.0f, 169.0f, 159.0f)
+#define XX_NAVIGATIONBAR_TINTCOLOR XX_RGBCOLOR_WITHOUTA(255.0f, 255.0f, 255.0f)
+#define XX_NAVIGATIONBAR_TITLECOLOR XX_RGBCOLOR_WITHOUTA(51.0f, 51.0f, 51.0f)
+
+#define XX_TABBAR_TINTCOLOR XX_RGBCOLOR_WITHOUTA(248.0f, 248.0f, 248.0f)
+#define XX_TABBAR_SELECTED_TINTCOLOR XX_RGBCOLOR_WITHOUTA(14.0f, 170.0f, 159.0f)
+#define XX_TABBAR_UNSELECTED_TINTCOLOR XX_RGBCOLOR_WITHOUTA(102.0f, 102.0f, 102.0f)
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* xxdcchat_pch */

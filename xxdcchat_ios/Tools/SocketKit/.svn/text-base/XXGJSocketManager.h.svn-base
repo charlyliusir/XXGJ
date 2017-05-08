@@ -1,0 +1,74 @@
+//
+//  XXGJSocketManager.h
+//  XXGJSocketServer
+//
+//  Created by 刘朝龙 on 2017/3/9.
+//  Copyright © 2017年 刘朝龙. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "XXGJSocketHeader.h"
+//#import "IMMessage.h"
+
+#define XXGJ_SOCKET_CONNECT_HEART @"connect"
+#define XXGJ_SOCKET_REVE_NEW_MESSAGE @"reveMessage"
+
+@protocol XXGJSocketManagerDelegate <NSObject>
+
+@optional
+
+/**
+ 监听到新 Socket 连接进来
+
+ @param address 地址
+ @param port  端口
+ */
+- (void)connect:(NSString *)address prot:(uint16_t)port;
+
+/**
+ 连接 Socket 失败
+
+ @param host socket 地址
+ @param port socket 端口
+ @param error 错误信息
+ */
+- (void)connectToHost:(NSString *)host onPort:(uint16_t) port error:(NSError *)error;
+
+/**
+ socket 自动断开链接
+
+ @param err 断开链接错误信息
+ */
+- (void)didDisconnectError:(NSError *)err;
+/**
+ 聊天信息
+
+ @param chatMessage 聊天信息
+ */
+//- (void)acceptMessage:(IMMessage *)chatMessage;
+
+/**
+ 用户列表
+
+ @param usersList 用户列表
+ */
+//- (void)acceptChatList:(NSArray <IMUser *> *)usersList;
+
+@end
+
+@interface XXGJSocketManager : NSObject
+
+#pragma mark -- 实例属性
+@property (nonatomic, assign)id<XXGJSocketManagerDelegate>delegate;
+//@property (nonatomic, strong)IMMessage *hert;
+
+#pragma mark -- 实例方法
++ (instancetype)sharedXXGJSocketManager;
+
+- (void)connect;
+- (void)disconnect;
+
+//- (void)sendChatMessage:(IMMessage *)message;
+//- (void)loginAccount:(IMUser *)account;
+
+@end

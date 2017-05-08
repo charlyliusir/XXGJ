@@ -1,0 +1,57 @@
+//
+//  XXGJChatItemTableViewCell.m
+//  xxdcchat_ios
+//
+//  Created by 刘朝龙 on 2017/3/16.
+//  Copyright © 2017年 刘朝龙. All rights reserved.
+//
+
+#import "XXGJChatItemTableViewCell.h"
+
+@interface XXGJChatItemTableViewCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleNameLabel;
+
+@end
+
+@implementation XXGJChatItemTableViewCell
+
++ (instancetype)chatItemCell:(UITableView *)tableView
+{
+    NSString *identifier = @"chatitem";
+    XXGJChatItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+    }
+    return cell;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+    
+}
+
+#pragma mark - property setter
+- (void)setChatItem:(XXGJChatItem *)chatItem
+{
+    _chatItem = chatItem;
+    
+    if (_chatItem.iconName)
+    {
+        [_iconImageView setImage:[UIImage imageNamed:_chatItem.iconName]];
+    }
+    if (_chatItem.iconURL)
+    {
+        [_iconImageView sd_setImageWithURL:[NSURL URLWithString:_chatItem.iconURL] placeholderImage:[UIImage imageNamed:@""]];
+    }
+    [_titleNameLabel setText:chatItem.titleName];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end

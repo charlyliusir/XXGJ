@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatlist" id="toL-YY-I5q" customClass="XXGJChatListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="toL-YY-I5q" id="U60-P0-11u">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-91-KDs">
+                        <rect key="frame" x="10" y="10.5" width="49" height="49"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="49" id="6q9-Y3-DX8"/>
+                            <constraint firstAttribute="width" constant="49" id="uaH-vH-lxN"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWX-fc-wkK">
+                        <rect key="frame" x="69" y="8" width="176.5" height="53.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王先生雅居装修沟通群" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZq-K5-yRV">
+                                <rect key="frame" x="0.0" y="0.0" width="176.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[48条未读]项目编号:BJ20160" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnZ-eK-e9p">
+                                <rect key="frame" x="0.0" y="37.5" width="176.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="qZq-K5-yRV" firstAttribute="top" secondItem="rWX-fc-wkK" secondAttribute="top" id="CUu-yB-2SR"/>
+                            <constraint firstItem="pnZ-eK-e9p" firstAttribute="leading" secondItem="qZq-K5-yRV" secondAttribute="leading" id="H2d-iB-skS"/>
+                            <constraint firstAttribute="width" secondItem="qZq-K5-yRV" secondAttribute="width" id="Moz-zG-mee"/>
+                            <constraint firstItem="pnZ-eK-e9p" firstAttribute="top" secondItem="qZq-K5-yRV" secondAttribute="bottom" constant="18" id="ibJ-DF-2lJ"/>
+                            <constraint firstAttribute="bottom" secondItem="pnZ-eK-e9p" secondAttribute="bottom" id="ofs-iQ-i1f"/>
+                            <constraint firstItem="qZq-K5-yRV" firstAttribute="leading" secondItem="rWX-fc-wkK" secondAttribute="leading" id="saf-Wi-e7b"/>
+                            <constraint firstAttribute="width" secondItem="pnZ-eK-e9p" secondAttribute="width" id="zaW-w4-1th"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上午11:45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPT-uR-h17">
+                        <rect key="frame" x="319" y="8" width="46" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.73725490196078436" green="0.73725490196078436" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_icon_not_push" translatesAutoresizingMaskIntoConstraints="NO" id="agG-HL-aDQ">
+                        <rect key="frame" x="350" y="45.5" width="15" height="15"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rWX-fc-wkK" firstAttribute="centerY" secondItem="U60-P0-11u" secondAttribute="centerY" id="25Z-2t-iAa"/>
+                    <constraint firstItem="agG-HL-aDQ" firstAttribute="top" secondItem="pnZ-eK-e9p" secondAttribute="top" id="2n3-nS-ojr"/>
+                    <constraint firstItem="Mo0-91-KDs" firstAttribute="centerY" secondItem="U60-P0-11u" secondAttribute="centerY" id="EM7-ap-8ep"/>
+                    <constraint firstItem="cPT-uR-h17" firstAttribute="top" secondItem="qZq-K5-yRV" secondAttribute="top" id="QZB-n4-fCp"/>
+                    <constraint firstItem="rWX-fc-wkK" firstAttribute="leading" secondItem="Mo0-91-KDs" secondAttribute="trailing" constant="10" id="jH6-o6-jKo"/>
+                    <constraint firstAttribute="trailing" secondItem="cPT-uR-h17" secondAttribute="trailing" constant="10" id="kD9-7R-BY6"/>
+                    <constraint firstItem="Mo0-91-KDs" firstAttribute="leading" secondItem="U60-P0-11u" secondAttribute="leading" constant="10" id="kDb-5v-XRE"/>
+                    <constraint firstAttribute="trailing" secondItem="agG-HL-aDQ" secondAttribute="trailing" constant="10" id="mCW-JN-wgp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="chatNotPushImageView" destination="agG-HL-aDQ" id="LR1-GX-UTk"/>
+                <outlet property="iconImageView" destination="Mo0-91-KDs" id="zIU-dv-bMc"/>
+                <outlet property="messageLabel" destination="pnZ-eK-e9p" id="eaZ-dN-cTT"/>
+                <outlet property="timeLabel" destination="cPT-uR-h17" id="TbH-PW-464"/>
+                <outlet property="titleLabel" destination="qZq-K5-yRV" id="8ed-Nr-Jq7"/>
+            </connections>
+            <point key="canvasLocation" x="89" y="-32"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chat_icon_not_push" width="15" height="15"/>
+    </resources>
+</document>
